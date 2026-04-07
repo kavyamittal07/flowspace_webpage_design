@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlowSpace — Responsive Web Layout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ HEADER / NAV -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="FlowSpace Home">
+        <span class="logo-mark">◈</span>
+        <span class="logo-text">FlowSpace</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact" class="nav-cta">Get Started</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger trigger (mobile) — uses Popover API, zero JS -->
+      <button
+        class="hamburger"
+        popovertarget="mobile-nav"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav popover -->
+  <nav id="mobile-nav" popover aria-label="Mobile navigation">
+    <button
+      class="popover-close"
+      popovertarget="mobile-nav"
+      popovertargetaction="hide"
+      aria-label="Close navigation menu"
+    >✕</button>
+    <ul>
+      <li><a href="#about"    popovertarget="mobile-nav" popovertargetaction="hide">About</a></li>
+      <li><a href="#services" popovertarget="mobile-nav" popovertargetaction="hide">Services</a></li>
+      <li><a href="#work"     popovertarget="mobile-nav" popovertargetaction="hide">Work</a></li>
+      <li><a href="#blog"     popovertarget="mobile-nav" popovertargetaction="hide">Blog</a></li>
+      <li><a href="#contact"  popovertarget="mobile-nav" popovertargetaction="hide" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+   <div class="container">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Responsive Design · Project 2</p>
+      <h1 id="hero-heading">
+        Design that <em>flows</em><br />
+        across every<br />
+        screen.
+      </h1>
+      <p class="hero-sub">
+        Built mobile-first. Fluid by nature. Accessible to all.
+        A showcase of CSS Grid, Flexbox, media queries, and the Popover API.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">Explore Work</a>
+        <a href="#about"    class="btn btn-ghost">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="device-stack">
+        <div class="device device-desktop">
+          <div class="device-screen">
+            <div class="screen-line"></div>
+            <div class="screen-block"></div>
+            <div class="screen-grid">
+              <div></div><div></div><div></div>
+            </div>
+          </div>
+        </div>
+        <div class="device device-tablet">
+          <div class="device-screen">
+            <div class="screen-line"></div>
+            <div class="screen-block sm"></div>
+          </div>
+        </div>
+        <div class="device device-mobile">
+          <div class="device-screen">
+            <div class="screen-line"></div>
+            <div class="screen-block xs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ ABOUT -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-text">
+          <span class="section-tag">// About</span>
+          <h2 id="about-heading">Content is like water — it fills its container.</h2>
+          <p>
+            Responsive design isn't about targeting specific devices.
+            It's about creating fluid systems that gracefully adapt to
+            any viewport — from a 320px phone to a 4K monitor.
+          </p>
+          <p>
+            This project demonstrates mobile-first CSS architecture,
+            using breakpoints as bridges rather than fences, and
+            building from the smallest screen outward.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">62<small>%</small></span>
+              <span class="stat-label">Mobile Traffic</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">3<small>+</small></span>
+              <span class="stat-label">Breakpoints</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">500<small>%</small></span>
+              <span class="stat-label">Zoom Support</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual" aria-hidden="true">
+          <div class="breakpoint-ruler">
+            <div class="bp-track">
+              <div class="bp-segment mobile">
+                <span>0px</span>
+                <label>Mobile Core</label>
+              </div>
+              <div class="bp-segment tablet">
+                <span>480px</span>
+                <label>Tablet+</label>
+              </div>
+              <div class="bp-segment desktop">
+                <span>768px</span>
+                <label>Desktop</label>
+              </div>
+              <span class="bp-end">1024px+</span>
+            </div>
+          </div>
+          <div class="code-snippet">
+            <span class="code-comment">/* Mobile-First Strategy */</span><br/>
+            <span class="code-selector">.layout</span> {<br/>
+            &nbsp;&nbsp;<span class="code-prop">display</span>: <span class="code-val">flex</span>;<br/>
+            &nbsp;&nbsp;<span class="code-prop">flex-direction</span>: <span class="code-val">column</span>;<br/>
+            }<br/><br/>
+            <span class="code-at">@media</span> (<span class="code-prop">min-width</span>: <span class="code-val">768px</span>) {<br/>
+            &nbsp;&nbsp;<span class="code-selector">.layout</span> {<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-prop">flex-direction</span>: <span class="code-val">row</span>;<br/>
+            &nbsp;&nbsp;}<br/>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ SERVICES (CSS GRID) -->
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// Services</span>
+        <h2 id="services-heading">What we build</h2>
+        <p class="section-sub">Grid for the layout. Flexbox for the components.</p>
+      </div>
+      <div class="services-grid">
+
+        <article class="service-card card-featured" tabindex="0">
+          <div class="card-icon" aria-hidden="true">⬡</div>
+          <h3>Responsive Layout</h3>
+          <p>CSS Grid + Flexbox architectures that adapt seamlessly from mobile core to widescreen layouts using fluid units and smart breakpoints.</p>
+          <span class="card-tag">Grid · Flexbox</span>
+        </article>
+
+        <article class="service-card" tabindex="0">
+          <div class="card-icon" aria-hidden="true">◎</div>
+          <h3>Fluid Typography</h3>
+          <p>Text that scales smoothly using <code>clamp()</code>, eliminating jarring jumps between font sizes at breakpoints.</p>
+          <span class="card-tag">clamp() · rem · vw</span>
+        </article>
+
+        <article class="service-card" tabindex="0">
+          <div class="card-icon" aria-hidden="true">≋</div>
+          <h3>Mobile Navigation</h3>
+          <p>Hamburger menus powered by the native Popover API — accessible, zero JavaScript, with smooth backdrop transitions.</p>
+          <span class="card-tag">Popover API · CSS</span>
+        </article>
+
+        <article class="service-card" tabindex="0">
+          <div class="card-icon" aria-hidden="true">◈</div>
+          <h3>Accessible UX</h3>
+          <p>Touch targets minimum 44×44px, user-controlled zoom up to 500%, WCAG-compliant contrast, and semantic HTML throughout.</p>
+          <span class="card-tag">WCAG · a11y</span>
+        </article>
+
+        <article class="service-card" tabindex="0">
+          <div class="card-icon" aria-hidden="true">⊞</div>
+          <h3>Container Queries</h3>
+          <p>Beyond the viewport — components that respond to their own container size, not just the screen width. Future-proof architecture.</p>
+          <span class="card-tag">@container · CSS</span>
+        </article>
+
+        <article class="service-card card-accent" tabindex="0">
+          <div class="card-icon" aria-hidden="true">↗</div>
+          <h3>Performance First</h3>
+          <p>Lightweight, zero-dependency HTML & CSS. Fast load times on any connection, any device, anywhere on the planet.</p>
+          <span class="card-tag">Pure CSS · No JS</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WORK / PORTFOLIO -->
+  <section class="work" id="work" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// Work</span>
+        <h2 id="work-heading">Selected projects</h2>
+      </div>
+      <div class="work-grid">
+
+        <article class="work-card work-card--wide" tabindex="0">
+          <div class="work-card-inner">
+            <div class="work-thumb" aria-hidden="true" style="--hue:210">
+              <div class="thumb-shape s1"></div>
+              <div class="thumb-shape s2"></div>
+              <span class="thumb-label">Desktop → Mobile</span>
+            </div>
+            <div class="work-info">
+              <span class="work-tag">CSS Grid</span>
+              <h3>E-Commerce Storefront</h3>
+              <p>Full responsive redesign from 1440px desktop to 320px mobile. Grid auto-fit with minmax columns.</p>
+              <a href="#" class="work-link" aria-label="View E-Commerce Storefront project">View Case →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" tabindex="0">
+          <div class="work-card-inner">
+            <div class="work-thumb" aria-hidden="true" style="--hue:160">
+              <div class="thumb-shape s1"></div>
+              <div class="thumb-shape s2"></div>
+              <span class="thumb-label">Fluid Type</span>
+            </div>
+            <div class="work-info">
+              <span class="work-tag">Typography</span>
+              <h3>Editorial Blog</h3>
+              <p>Fluid type scale using clamp() from 1rem to 2rem across all viewports.</p>
+              <a href="#" class="work-link" aria-label="View Editorial Blog project">View Case →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" tabindex="0">
+          <div class="work-card-inner">
+            <div class="work-thumb" aria-hidden="true" style="--hue:340">
+              <div class="thumb-shape s1"></div>
+              <div class="thumb-shape s2"></div>
+              <span class="thumb-label">Nav + Popover</span>
+            </div>
+            <div class="work-info">
+              <span class="work-tag">Navigation</span>
+              <h3>SaaS Dashboard</h3>
+              <p>Responsive sidebar that collapses into a popover menu on small screens. No JavaScript.</p>
+              <a href="#" class="work-link" aria-label="View SaaS Dashboard project">View Case →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ BLOG (SIDEBAR LAYOUT) -->
+  <section class="blog" id="blog" aria-labelledby="blog-heading">
+    <div class="container">
+      <div class="blog-layout">
+
+        <main class="blog-main" aria-label="Blog posts">
+          <div class="section-header align-left">
+            <span class="section-tag">// Blog</span>
+            <h2 id="blog-heading">From the lab</h2>
+          </div>
+          <div class="blog-posts">
+
+            <article class="post-card">
+              <time class="post-date" datetime="2026-03-20">Mar 20, 2026</time>
+              <h3><a href="#">Breakpoints are Bridges, Not Fences</a></h3>
+              <p>Why designing for content breakage — not device models — produces more resilient responsive layouts that stand the test of time.</p>
+              <div class="post-meta">
+                <span class="post-tag">CSS</span>
+                <span class="post-read">5 min read</span>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <time class="post-date" datetime="2026-03-14">Mar 14, 2026</time>
+              <h3><a href="#">The Popover API Changes Everything</a></h3>
+              <p>Native browser popovers arrived and they're more powerful than you think. Build modal menus, tooltips, and drawers with zero JavaScript.</p>
+              <div class="post-meta">
+                <span class="post-tag">HTML</span>
+                <span class="post-read">7 min read</span>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <time class="post-date" datetime="2026-03-08">Mar 08, 2026</time>
+              <h3><a href="#">clamp() Is the Only Font-Size You Need</a></h3>
+              <p>One line of CSS. No media queries. Perfectly scaling typography from the smallest phone to the largest monitor. Here's how it works.</p>
+              <div class="post-meta">
+                <span class="post-tag">Typography</span>
+                <span class="post-read">4 min read</span>
+              </div>
+            </article>
+
+          </div>
+        </main>
+
+        <aside class="blog-sidebar" aria-label="Sidebar">
+          <div class="sidebar-widget">
+            <h3>Implementation Checklist</h3>
+            <ul class="checklist">
+              <li class="checked">Meta viewport tag</li>
+              <li class="checked">Mobile-first base CSS</li>
+              <li class="checked">Grid (macro) + Flexbox (micro)</li>
+              <li class="checked">Fluid units (%, rem, vw)</li>
+              <li class="checked">Hamburger / Popover nav</li>
+              <li class="checked">Accessible touch targets</li>
+              <li class="checked">500% zoom support</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget widget-highlight">
+            <h3>Key Skills</h3>
+            <div class="skill-tags">
+              <span>CSS Grid</span>
+              <span>Flexbox</span>
+              <span>Media Queries</span>
+              <span>clamp()</span>
+              <span>Popover API</span>
+              <span>Mobile-First</span>
+              <span>WCAG</span>
+              <span>Semantic HTML</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-text">
+          <span class="section-tag light">// Contact</span>
+          <h2 id="contact-heading">Ready to build something fluid?</h2>
+          <p>Every great responsive site starts with a single breakpoint. Let's set yours.</p>
+        </div>
+        <div class="contact-form-wrap">
+          <div class="contact-form" role="form" aria-label="Contact form">
+            <div class="field-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+            </div>
+            <div class="field-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div class="field-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your project…"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary full-width" onclick="this.textContent='Sent ✓'; this.disabled=true;">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER -->
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-layout">
+        <div class="footer-brand">
+          <a href="#" class="logo" aria-label="FlowSpace Home">
+            <span class="logo-mark">◈</span>
+            <span class="logo-text">FlowSpace</span>
+          </a>
+          <p>A DecodeLabs Industrial Training Project.<br/>Batch 2026 · Frontend Development.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#work">Work</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Learn</h4>
+            <ul>
+              <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a></li>
+              <li><a href="https://css-tricks.com" target="_blank" rel="noopener">CSS-Tricks</a></li>
+              <li><a href="https://caniuse.com" target="_blank" rel="noopener">Can I Use</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:decodelabs.tech@gmail.com">Email Us</a></li>
+              <li><a href="https://www.decodelabs.tech" target="_blank" rel="noopener">decodelabs.tech</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 FlowSpace · DecodeLabs. Built with pure HTML & CSS.</p>
+        <p class="footer-tech">
+          <code>CSS Grid</code> · <code>Flexbox</code> · <code>Popover API</code> · <code>clamp()</code>
+        </p>
+      </div>
+    </div>
+    </footer>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
