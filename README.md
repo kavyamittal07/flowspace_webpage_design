@@ -14,10 +14,10 @@ and **accessible UI practices**.
 
 ------------------------------------------------------------------------
 
-<img width="1466" height="748" alt="Screenshot 2026-04-07 at 11 18 32 PM" src="https://github.com/user-attachments/assets/aadc27e2-ef2f-4dd5-8e67-015bdd6bd764" />
-<img width="306" height="606" alt="Screenshot 2026-04-07 at 11 21 22 PM" src="https://github.com/user-attachments/assets/83abbeaf-091e-4cac-aedb-4d8d62baf9a1" />
-<img width="318" height="610" alt="Screenshot 2026-04-07 at 11 22 11 PM" src="https://github.com/user-attachments/assets/288dd594-d3ee-44b0-8146-b86f0e10dd4e" />
-
+![alt text](<Screenshot 2026-04-08 at 3.08.54 PM.png>)
+![alt text](<Screenshot 2026-04-08 at 3.09.22 PM.png>)
+![alt text](<Screenshot 2026-04-08 at 3.09.54 PM.png>)
+![alt text](<Screenshot 2026-04-08 at 3.10.08 PM.png>)
 
 
 ------------------------------------------------------------------------
@@ -76,15 +76,6 @@ FlowSpace/ │── index.html\
 
 1.  Download or clone the repo\
 2.  Open `index.html` in your browser
-
-------------------------------------------------------------------------
-
-
-
-------------------------------------------------------------------------
-
-
-
 
 ------------------------------------------------------------------------
 
